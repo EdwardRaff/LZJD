@@ -5,6 +5,10 @@
 #include "MurmurHash3.h"
 using namespace std;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void MurmurHash3::reset() {
 	_len = 0;
 	_h1 = _seed;
@@ -65,3 +69,6 @@ MurmurHash3::MurmurHash3(int32_t _seed) {
     this->reset();
 }
 
+#ifdef __cplusplus
+}
+#endif
