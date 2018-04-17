@@ -5,7 +5,9 @@
 #include <string>
 #include <cstdint>
 
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define FORCE_INLINE inline __attribute__((always_inline))
 
@@ -67,5 +69,9 @@ class MurmurHash3
         int32_t pushByte(int8_t b);
 
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
