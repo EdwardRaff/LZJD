@@ -15,6 +15,9 @@ PG_FUNCTION_INFO_V1(pg_lzjd_compare);
 Datum pg_lzjd_compare(PG_FUNCTION_ARGS);
 
 Datum pg_lzjd_compare(PG_FUNCTION_ARGS) {
+    if (PG_ARGISNULL(0) || PG_ARGISNULL(1)) {
+        PG_RETURN_INT32(0);
+    }
     text *arg1 = PG_GETARG_TEXT_P(0);
     text *arg2 = PG_GETARG_TEXT_P(1);
     char* hash1 = text_to_cstring(arg1);

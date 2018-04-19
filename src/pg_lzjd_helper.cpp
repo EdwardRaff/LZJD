@@ -55,9 +55,14 @@ vector<int32_t> cstring_to_lzjd(char* hash) {
 }
 
 int32_t lzjd_similarity(char *hash1, char *hash2) {
-    vector<int32_t> l1 = cstring_to_lzjd(hash1);
-    vector<int32_t> l2 = cstring_to_lzjd(hash2);
-    return similarity(l1, l2);
+    try {
+        vector<int32_t> l1 = cstring_to_lzjd(hash1);
+        vector<int32_t> l2 = cstring_to_lzjd(hash2);
+        return similarity(l1, l2);
+    } catch(...) {
+        return 0;
+    }
+    return 0;
 }
 
 } // End Extern C
