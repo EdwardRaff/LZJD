@@ -8,7 +8,7 @@
 PG_MODULE_MAGIC;
 
 // 
-// CREATE OR REPLACE FUNCTION lzjd_compare(TEXT, TEXT) RETURNS INTEGER AS 'lzjd_psql.so', 'pg_lzjd_compare' LANGUAGE 'C';
+// CREATE OR REPLACE FUNCTION lzjd_compare(TEXT, TEXT) RETURNS INTEGER AS 'lzjd_psql.so', 'pg_lzjd_compare' LANGUAGE 'c';
 //
 
 PG_FUNCTION_INFO_V1(pg_lzjd_compare);

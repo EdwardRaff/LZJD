@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <algorithm>  
 #include <mutex>          // std::call_once, std::once_flag
-
+#include <cmath> // round()
 #include <boost/function_output_iterator.hpp>
 
 
