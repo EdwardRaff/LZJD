@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <algorithm>  
 #include <mutex>          // std::call_once, std::once_flag
-
+#include <cmath> // round()
 #include <boost/function_output_iterator.hpp>
 
 
@@ -16,6 +16,10 @@
 #include "MurmurHash3.h"
 
 using namespace std;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 LZJD::LZJD() {
 }
@@ -131,3 +135,7 @@ int32_t similarity(const std::vector<int32_t>& x_minset, const std::vector<int32
     double sim = same / (double) (x_minset.size() + y_minset.size() - same);
     return (int) (round(100*sim));
 }
+
+#ifdef __cplusplus
+}
+#endif
